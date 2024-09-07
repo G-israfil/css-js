@@ -1,0 +1,54 @@
+{
+    "agreementType": "Contract",
+    "name": "CITY UNION BANK LUDHIANA signed Contract",
+    "status": "Active",
+    "agreementAuthorization": [
+        {
+            "date": "2024-07-03T14:11:46Z",
+            "signatureRepresentation": "physical",
+            "state": "approved"
+        }
+    ],
+    "agreementItem": [
+        {
+            "productOffering": {
+                "id": "2461116132842560",
+                "name": "Business Postpaid",
+ "href": "https://v1",
+"version":"1.0"
+            }
+        }
+    ],
+    "agreementPeriod": {
+        "endDateTime": "2025-07-03T14:11:46Z",
+        "startDateTime": "2024-07-03T14:11:46Z"
+    },
+    "characteristic": [
+        {
+            "name": "quoteId",
+            "valueType": "string",
+            "value": "Q-1234-24"
+        },
+        {
+            "name": "commitmentUnit",
+            "valueType": "string",
+            "value": "Month"
+        },
+        {
+            "name": "commitmentAmount",
+            "valueType": "integer",
+            "value": "12"
+        }
+    ],
+    "completionDate": {
+        "startDateTime": "2024-07-03T14:13:52Z"
+    },
+    "engagedParty": [
+        {
+            "id": "37000037699",
+            "href": "/api/customerManagement/v4/customer/37000037699",
+            "name": "CITY UNION BANK LUDHIANA",
+            "@referredType": "Customer"
+        }
+    ]
+}
