@@ -73,7 +73,7 @@ $(document).ready(function () {
 
 
 
-const blogUrl = 'https://myblogerxbs.blogspot.com/feeds/posts/default?alt=json';
+const blogUrl = 'https://fromstracttxml.blogspot.com/feeds/posts/default?alt=json';
 
 async function fetchPosts() {
     try {
