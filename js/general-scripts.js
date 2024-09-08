@@ -55,7 +55,7 @@ $(document).ready(function () {
                 $('#popup-description').text(description);
                 $('#popup-image').attr('src', imageSrc).css({
                     'width': '100%',
-                    'height': '20%',
+                    'height': '30%',
                     'filter': 'grayscale(0) brightness(1)'
                 });
 
