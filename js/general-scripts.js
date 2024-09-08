@@ -73,7 +73,7 @@ $(document).ready(function () {
 
 document.addEventListener('DOMContentLoaded', function() {
     // Add click event listeners to all .read-more divs
-    document.querySelectorAll('.read-more-link-button').forEach(a => {
+    document.querySelectorAll('.read-more').forEach(a => {
         readMoreDiv.addEventListener('click', function() {
             // Find the <a> tag within the .read-more div
             console.log('israfil clicked')
