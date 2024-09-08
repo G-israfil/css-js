@@ -36,7 +36,7 @@ $(document).ready(function () {
         });
 });
 
-$(document).ready(function () {
+/*$(document).ready(function () {
     $('.zoom').magnificPopup({
         type: 'inline',
         midClick: true,
@@ -77,7 +77,7 @@ $(document).ready(function() {
         event.preventDefault(); // Prevent default action
         window.location.href = $(this).attr('href'); // Redirect to the URL
     });
-});
+}); */
 
 /* function grax_tm_contact_form() {
     var name = jQuery(".contact_form #name").val();
