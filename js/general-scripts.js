@@ -79,7 +79,7 @@ $(document).ready(function() {
     });
 });
 
-function grax_tm_contact_form() {
+/* function grax_tm_contact_form() {
     var name = jQuery(".contact_form #name").val();
     var email = jQuery(".contact_form #email").val();
     var message = jQuery(".contact_form #message").val();
@@ -113,5 +113,5 @@ function grax_tm_contact_form() {
     }
 return false;
 
-}
+} */
 
