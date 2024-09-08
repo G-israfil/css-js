@@ -119,7 +119,7 @@ async function populateCarousel() {
   console.log(carouselInner)
 }
 
-document.addEventListener('DOMContentLoaded', populateCarousel);
+//document.addEventListener('DOMContentLoaded', populateCarousel);
 
 function grax_tm_contact_form() {
     var name = jQuery(".contact_form #name").val();
