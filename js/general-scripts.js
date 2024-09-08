@@ -71,23 +71,13 @@ $(document).ready(function () {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Add click event listeners to all .read-more divs
-    document.querySelectorAll('.read-more').forEach(a => {
-        readMoreDiv.addEventListener('click', function() {
-            // Find the <a> tag within the .read-more div
-            console.log('israfil clicked')
-            const link = this.querySelector('.read-more-link');
-            console.log(link)
-            if (link) {
-                const url = link.getAttribute('href');
-                window.location.href = url;  // Redirect to the URL on the same page
-            }
-        });
+$(document).ready(function() {
+    // Add click event listeners to all .read-more-link elements
+    $('.read-more-link').on('click', function(event) {
+        event.preventDefault(); // Prevent default action
+        window.location.href = $(this).attr('href'); // Redirect to the URL
     });
 });
-
-
 
 function grax_tm_contact_form() {
     var name = jQuery(".contact_form #name").val();
