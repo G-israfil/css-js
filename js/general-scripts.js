@@ -71,7 +71,19 @@ $(document).ready(function () {
 });
 
 
-
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click event listeners to all .read-more divs
+    document.querySelectorAll('.read-more').forEach(readMoreDiv => {
+        readMoreDiv.addEventListener('click', function() {
+            // Find the <a> tag within the .read-more div
+            const link = this.querySelector('.read-more-link');
+            if (link) {
+                const url = link.getAttribute('href');
+                window.location.href = url;  // Redirect to the URL on the same page
+            }
+        });
+    });
+});
 
 
 
