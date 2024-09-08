@@ -109,17 +109,66 @@ function createCarouselItem(post, index) {
     `;
 }
 
-async function populateCarousel() {
-  console.log('israfil')
-    const posts = await fetchPosts();
-  console.log(posts)
-    const carouselInner = document.getElementById('corousel-inner-posts');
-  console.log(carouselInner)
-    carouselInner.innerHTML = posts.map((post, index) => createCarouselItem(post, index)).join('');
-  console.log(carouselInner)
+function populateCarousel(posts) {
+    let carouselInner = document.getElementById('corousel-inner-posts');
+    carouselInner.innerHTML = ''; // Clear any existing content
+
+    let rowsHTML = '';  // Store all rows of carousel items
+    let rowOpen = false;  // Track if a row is open
+
+    posts.forEach((post, index) => {
+        let postTitle = post.title.$t;
+        let postContent = post.content.$t;
+        let postLink = post.link.find(l => l.rel === 'alternate').href;
+        let postImage = post.media$thumbnail?.url || 'https://cdn.jsdelivr.net/gh/G-israfil/css-js/img/blog-image.jpeg';  // Use a default image if none provided
+
+        let activeClass = index === 0 ? 'active' : '';
+
+        // Open a new row every 3 posts
+        if (index % 3 === 0) {
+            if (rowOpen) {
+                rowsHTML += `</div></div>`;  // Close the previous row
+            }
+            rowsHTML += `<div class='carousel-item ${activeClass}'><div class='row mb-5'>`;  // Start a new row
+            rowOpen = true;
+        }
+
+        // Create the HTML for a single post item
+        let postItem = `
+            <div class='col-lg-4 col-md-12 mb-4'>
+                <div class='img-area'>
+                    <img alt='Blog Image' class='img-fluid' src='${postImage}'/>
+                </div>
+                <div class='d-md-block mt-2'>
+                    <h3 class='blog-header pt-3'>${postTitle}</h3>
+                    <p>${truncateText(postContent, 150)}</p>
+                    <div class='read-more'>
+                        <span class='read-more-circle'></span>
+                        <a href='${postLink}'>READ MORE</a>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Append the post to the current row
+        rowsHTML += postItem;
+    });
+
+    // Close the final row
+    if (rowOpen) {
+        rowsHTML += `</div></div>`;
+    }
+
+    // Append all rows to the carousel
+    carouselInner.innerHTML = rowsHTML;
 }
 
-//document.addEventListener('DOMContentLoaded', populateCarousel);
+// Utility to truncate text for the post previews
+function truncateText(text, length) {
+    return text.length > length ? text.substring(0, length) + "..." : text;
+}
+
+document.addEventListener('DOMContentLoaded', populateCarousel);
 
 function grax_tm_contact_form() {
     var name = jQuery(".contact_form #name").val();
